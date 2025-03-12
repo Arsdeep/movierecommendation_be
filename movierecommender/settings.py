@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p6j)1(#64%07b1m31cb^$as#w9u)5_r)kym^vse0db8ex*u3m&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,13 +41,17 @@ INSTALLED_APPS = [
     
     # Third-party apps
     'rest_framework',
+    "corsheaders",
     
     # Project apps
+    'moviedetail',
+    'moviesearch',
     'recommender',
 ]
 
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -56,6 +60,13 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # React frontend
+    "https://yourfrontend.com",  # Your production frontend
+]
+CORS_ALLOW_ALL_ORIGINS = True  # Allow all domains
 
 ROOT_URLCONF = 'movierecommender.urls'
 

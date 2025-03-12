@@ -15,6 +15,7 @@ class MovieRecommender:
     def __init__(self):
         self.df = None
         self.indices = None
+        self.lowercase_indices = None  # New lowercase index
         self.cosine_sim = None
         self.initialized = False
         
@@ -88,9 +89,11 @@ class MovieRecommender:
             count_matrix = count.fit_transform(self.df['soup'])
             self.cosine_sim = cosine_similarity(count_matrix, count_matrix)
             
-            # Create reverse mapping
+            # Create reverse mapping for original titles and lowercase titles
             self.indices = pd.Series(self.df.index, index=self.df['title']).drop_duplicates()
-            
+            # Create lowercase title indices for case-insensitive lookup
+            self.lowercase_indices = pd.Series(self.df.index, index=self.df['title'].str.lower()).drop_duplicates()
+
             self.initialized = True
             logger.info("Recommendation engine initialized successfully")
             
@@ -146,16 +149,18 @@ class MovieRecommender:
         if not self.initialized:
             return []
         
-        # Check if the movie exists
-        if title not in self.indices:
-            logger.warning(f"Movie title '{title}' not found in indices")
-            # Return a list of available titles for debugging
-            available_titles = list(self.indices.index)[:20]  # First 20 titles
+        # Normalize input title: lowercase and strip whitespace
+        normalized_title = title.strip().lower()
+        
+        # Check if the normalized title exists in lowercase indices
+        if normalized_title not in self.lowercase_indices:
+            logger.warning(f"Movie title '{title}' (normalized: '{normalized_title}') not found in indices")
+            available_titles = list(self.indices.index)[:20]  # Show original titles
             logger.info(f"Some available titles: {available_titles}")
             return []
         
-        # Get the index of the movie
-        idx = self.indices[title]
+        # Get the index from the lowercase mapping
+        idx = self.lowercase_indices[normalized_title]
         
         # Get similarity scores
         sim_scores = list(enumerate(self.cosine_sim[idx]))

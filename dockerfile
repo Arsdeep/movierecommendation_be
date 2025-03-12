@@ -1,17 +1,23 @@
-# Use official Python image
-FROM python:3.10
+# Use the official Python image as base
+FROM python:3.12
 
-# Set the working directory
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the project files
-COPY . /app
+# Copy the dependencies file to the working directory
+COPY requirements.txt /app/
 
-# Install dependencies
-RUN pip install --no-cache-dir django djangorestframework requests gunicorn
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port the app runs on
+# Copy the Django project code
+COPY . /app/
+
+# Expose the application port
 EXPOSE 8000
 
-# Start the Django server
-CMD ["gunicorn", "movierecommender.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Run database migrations and start the Django server# Run database migrations and start the Django server
+ENTRYPOINT ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
