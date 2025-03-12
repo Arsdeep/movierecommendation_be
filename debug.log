@@ -1,0 +1,126 @@
+INFO 2025-03-12 12:31:47,195 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 12:31:52,211 views Initializing recommendation engine
+INFO 2025-03-12 12:31:52,211 recommendation_engine Loading data from /home/wolf/Projects/movierecommendation_be/dataset/tmdb_5000_credits.csv and /home/wolf/Projects/movierecommendation_be/dataset/tmdb_5000_movies.csv
+INFO 2025-03-12 12:31:52,456 recommendation_engine Credits columns: ['movie_id', 'title', 'cast', 'crew']
+INFO 2025-03-12 12:31:52,456 recommendation_engine Movies columns: ['budget', 'genres', 'homepage', 'id', 'keywords', 'original_language', 'original_title', 'overview', 'popularity', 'production_companies', 'production_countries', 'release_date', 'revenue', 'runtime', 'spoken_languages', 'status', 'tagline', 'title', 'vote_average', 'vote_count']
+ERROR 2025-03-12 12:31:55,795 recommendation_engine Error initializing recommendation engine: No 'title' column found after merge
+ERROR 2025-03-12 12:31:55,795 recommendation_engine Traceback (most recent call last):
+  File "/home/wolf/Projects/movierecommendation_be/recommender/recommendation_engine.py", line 83, in initialize
+    raise ValueError("No 'title' column found after merge")
+ValueError: No 'title' column found after merge
+
+ERROR 2025-03-12 12:31:55,795 views Failed to initialize recommendation engine: No 'title' column found after merge
+ERROR 2025-03-12 12:31:55,795 views Traceback (most recent call last):
+  File "/home/wolf/Projects/movierecommendation_be/recommender/views.py", line 51, in get
+    recommender.initialize(credits_path, movies_path)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/wolf/Projects/movierecommendation_be/recommender/recommendation_engine.py", line 83, in initialize
+    raise ValueError("No 'title' column found after merge")
+ValueError: No 'title' column found after merge
+
+ERROR 2025-03-12 12:31:55,802 log Internal Server Error: /api/recommend/
+ERROR 2025-03-12 12:31:55,803 basehttp "GET /api/recommend/?title=The%20Avengers HTTP/1.1" 500 5452
+INFO 2025-03-12 12:31:56,002 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,002 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,002 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-03-12 12:31:56,002 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,002 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2025-03-12 12:31:56,003 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,004 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,004 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,004 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,005 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,005 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-03-12 12:31:56,009 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,022 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,041 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,142 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,142 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,143 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,143 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:31:56,143 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:13,102 autoreload /home/wolf/Projects/movierecommendation_be/recommender/recommendation_engine.py changed, reloading.
+INFO 2025-03-12 12:34:13,606 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 12:34:24,749 autoreload /home/wolf/Projects/movierecommendation_be/recommender/views.py changed, reloading.
+INFO 2025-03-12 12:34:25,188 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 12:34:44,100 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 12:34:48,580 views Initializing recommendation engine
+INFO 2025-03-12 12:34:48,580 recommendation_engine Loading data from /home/wolf/Projects/movierecommendation_be/dataset/tmdb_5000_credits.csv and /home/wolf/Projects/movierecommendation_be/dataset/tmdb_5000_movies.csv
+INFO 2025-03-12 12:34:48,850 recommendation_engine Credits columns: ['movie_id', 'title', 'cast', 'crew']
+INFO 2025-03-12 12:34:48,850 recommendation_engine Movies columns: ['budget', 'genres', 'homepage', 'id', 'keywords', 'original_language', 'original_title', 'overview', 'popularity', 'production_companies', 'production_countries', 'release_date', 'revenue', 'runtime', 'spoken_languages', 'status', 'tagline', 'title', 'vote_average', 'vote_count']
+INFO 2025-03-12 12:34:48,851 recommendation_engine Renamed 'movie_id' to 'id' for merging
+INFO 2025-03-12 12:34:48,853 recommendation_engine Handled duplicate title columns after merge
+INFO 2025-03-12 12:34:48,853 recommendation_engine Merged dataframe columns: ['budget', 'genres', 'homepage', 'id', 'keywords', 'original_language', 'original_title', 'overview', 'popularity', 'production_companies', 'production_countries', 'release_date', 'revenue', 'runtime', 'spoken_languages', 'status', 'tagline', 'vote_average', 'vote_count', 'cast', 'crew', 'title']
+INFO 2025-03-12 12:34:48,853 recommendation_engine Merged dataframe shape: (4803, 22)
+INFO 2025-03-12 12:34:52,132 recommendation_engine Recommendation engine initialized successfully
+INFO 2025-03-12 12:34:52,145 basehttp "GET /api/recommend/?title=The%20Avengers HTTP/1.1" 200 6491
+INFO 2025-03-12 12:34:52,320 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,321 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,322 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,322 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,322 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,323 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,323 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,324 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,324 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,324 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,324 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,332 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,344 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,422 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,449 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,451 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,451 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,452 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:34:52,453 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:07,881 basehttp "GET /api/recommend/?title=Toy%20Story HTTP/1.1" 200 6522
+INFO 2025-03-12 12:44:08,233 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,234 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,235 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,235 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,236 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,237 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,237 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,237 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,238 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,239 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,240 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,257 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,257 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2025-03-12 12:44:08,269 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,429 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:44:08,431 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-03-12 12:45:56,252 basehttp "GET /api/recommend/?title=Toy%20Story HTTP/1.1" 200 6522
+INFO 2025-03-12 13:13:10,057 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 13:17:18,079 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 13:18:16,430 autoreload /home/wolf/Projects/movierecommendation_be/recommender/serializers.py changed, reloading.
+INFO 2025-03-12 13:18:16,801 autoreload Watching for file changes with StatReloader
+INFO 2025-03-12 13:18:46,766 views Initializing recommendation engine
+INFO 2025-03-12 13:18:46,767 recommendation_engine Loading data from /home/wolf/Projects/movierecommendation_be/dataset/tmdb_5000_credits.csv and /home/wolf/Projects/movierecommendation_be/dataset/tmdb_5000_movies.csv
+INFO 2025-03-12 13:18:47,228 recommendation_engine Credits columns: ['movie_id', 'title', 'cast', 'crew']
+INFO 2025-03-12 13:18:47,228 recommendation_engine Movies columns: ['budget', 'genres', 'homepage', 'id', 'keywords', 'original_language', 'original_title', 'overview', 'popularity', 'production_companies', 'production_countries', 'release_date', 'revenue', 'runtime', 'spoken_languages', 'status', 'tagline', 'title', 'vote_average', 'vote_count']
+INFO 2025-03-12 13:18:47,229 recommendation_engine Renamed 'movie_id' to 'id' for merging
+INFO 2025-03-12 13:18:47,234 recommendation_engine Handled duplicate title columns after merge
+INFO 2025-03-12 13:18:47,234 recommendation_engine Merged dataframe columns: ['budget', 'genres', 'homepage', 'id', 'keywords', 'original_language', 'original_title', 'overview', 'popularity', 'production_companies', 'production_countries', 'release_date', 'revenue', 'runtime', 'spoken_languages', 'status', 'tagline', 'vote_average', 'vote_count', 'cast', 'crew', 'title']
+INFO 2025-03-12 13:18:47,234 recommendation_engine Merged dataframe shape: (4803, 22)
+INFO 2025-03-12 13:18:51,839 recommendation_engine Recommendation engine initialized successfully
+INFO 2025-03-12 13:18:51,843 basehttp "GET /api/recommend/?title=Toy%20Story HTTP/1.1" 200 631
+WARNING 2025-03-12 13:19:46,230 log Not Found: /api/movie/
+WARNING 2025-03-12 13:19:46,231 basehttp "GET /api/movie/?title=Inception HTTP/1.1" 404 2503
+WARNING 2025-03-12 13:19:55,600 log Not Found: /api/movie_details/
+WARNING 2025-03-12 13:19:55,600 basehttp "GET /api/movie_details/?title=Inception HTTP/1.1" 404 2527
+WARNING 2025-03-12 13:20:00,612 log Not Found: /api/movie_detail/
+WARNING 2025-03-12 13:20:00,612 basehttp "GET /api/movie_detail/?title=Inception HTTP/1.1" 404 2524
+WARNING 2025-03-12 13:20:12,377 log Not Found: /api/movieail/
+WARNING 2025-03-12 13:20:12,377 basehttp "GET /api/movieail/?title=Inception HTTP/1.1" 404 2512
+WARNING 2025-03-12 13:20:17,658 log Not Found: /api/movie/
+WARNING 2025-03-12 13:20:17,658 basehttp "GET /api/movie/?title=Inception HTTP/1.1" 404 2503
+WARNING 2025-03-12 13:20:18,976 log Not Found: /api/movie/
+WARNING 2025-03-12 13:20:18,977 basehttp "GET /api/movie/?title=Inception HTTP/1.1" 404 2503
+INFO 2025-03-12 13:21:27,356 autoreload /home/wolf/Projects/movierecommendation_be/movierecommender/urls.py changed, reloading.
+INFO 2025-03-12 13:21:27,736 autoreload Watching for file changes with StatReloader
+DEBUG 2025-03-12 13:21:34,360 connectionpool Starting new HTTP connection (1): www.omdbapi.com:80
+DEBUG 2025-03-12 13:21:34,993 connectionpool http://www.omdbapi.com:80 "GET /?t=Inception&apikey=7ed79aec HTTP/1.1" 200 None
+INFO 2025-03-12 13:21:34,994 basehttp "GET /api/movie/?title=Inception HTTP/1.1" 200 1073
+INFO 2025-03-12 13:32:12,597 autoreload /home/wolf/Projects/movierecommendation_be/movierecommender/urls.py changed, reloading.
+INFO 2025-03-12 13:32:12,868 autoreload Watching for file changes with StatReloader
