@@ -7,6 +7,14 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import os
 import logging
+import ast
+
+def safe_literal_eval(x):
+    try:
+        return ast.literal_eval(x) if isinstance(x, str) else x
+    except (ValueError, SyntaxError):
+        return x  # Return original value if parsing fails
+
 
 # Set up logging
 logger = logging.getLogger(__name__)
@@ -61,7 +69,8 @@ class MovieRecommender:
             features = ['cast', 'crew', 'keywords', 'genres']
             for feature in features:
                 if feature in self.df.columns:
-                    self.df[feature] = self.df[feature].apply(lambda x: literal_eval(x) if isinstance(x, str) else x)
+                    # self.df[feature] = self.df[feature].apply(lambda x: literal_eval(x) if isinstance(x, str) else x) # for older version
+                    self.df[feature] = self.df[feature].apply(safe_literal_eval)
             
             # Extract director
             if 'crew' in self.df.columns:
