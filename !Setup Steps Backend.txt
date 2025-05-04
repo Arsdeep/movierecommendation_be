@@ -1,0 +1,11 @@
+After opening this folder in VS Code -
+    1. python -m venv .venv
+    2. .venv/Scripts/activate
+    3. pip install -r requirements.txt
+
+To run backend -
+    1. python manage.py runserver
+    2. .\ngrok config add-authtoken 2lZ71ZXxhqnU4fi3oQ1oCQTHf4v_EBNgT8GhNKPHzQK7eZ1M
+    3. .\ngrok http --url=formally-selected-iguana.ngrok-free.app 8000
+
+Now frontend will work properly

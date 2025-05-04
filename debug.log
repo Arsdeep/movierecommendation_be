@@ -791,3 +791,59 @@ INFO 2025-03-12 16:22:46,562 basehttp "GET /api/recommend/?title=Jurassic%20Worl
 DEBUG 2025-03-12 16:22:49,314 connectionpool Starting new HTTP connection (1): www.omdbapi.com:80
 DEBUG 2025-03-12 16:22:49,704 connectionpool http://www.omdbapi.com:80 "GET /?t=Guardians+of+the+Galaxy&apikey=7ed79aec HTTP/1.1" 200 None
 INFO 2025-03-12 16:22:49,705 basehttp "GET /api/movie/?title=Guardians%20of%20the%20Galaxy HTTP/1.1" 200 990
+INFO 2025-05-04 12:29:30,752 autoreload Watching for file changes with StatReloader
+INFO 2025-05-04 12:30:06,675 basehttp "GET /api/search/?query=spider HTTP/1.1" 200 235
+INFO 2025-05-04 12:30:08,744 views Initializing recommendation engine
+INFO 2025-05-04 12:30:08,744 recommendation_engine Loading data from C:\Users\arsgu\OneDrive\Documents\SYNCED WORK\Github\Movie_recommender\movierecommendation_be\dataset\tmdb_5000_credits.csv and C:\Users\arsgu\OneDrive\Documents\SYNCED WORK\Github\Movie_recommender\movierecommendation_be\dataset\tmdb_5000_movies.csv
+INFO 2025-05-04 12:30:09,850 recommendation_engine Credits columns: ['movie_id', 'title', 'cast', 'crew']
+INFO 2025-05-04 12:30:09,852 recommendation_engine Movies columns: ['budget', 'genres', 'homepage', 'id', 'keywords', 'original_language', 'original_title', 'overview', 'popularity', 'production_companies', 'production_countries', 'release_date', 'revenue', 'runtime', 'spoken_languages', 'status', 'tagline', 'title', 'vote_average', 'vote_count']
+INFO 2025-05-04 12:30:09,856 recommendation_engine Renamed 'movie_id' to 'id' for merging
+INFO 2025-05-04 12:30:09,878 recommendation_engine Handled duplicate title columns after merge
+INFO 2025-05-04 12:30:09,881 recommendation_engine Merged dataframe columns: ['budget', 'genres', 'homepage', 'id', 'keywords', 'original_language', 'original_title', 'overview', 'popularity', 'production_companies', 'production_countries', 'release_date', 'revenue', 'runtime', 'spoken_languages', 'status', 'tagline', 'vote_average', 'vote_count', 'cast', 'crew', 'title']
+INFO 2025-05-04 12:30:09,885 recommendation_engine Merged dataframe shape: (4803, 22)
+INFO 2025-05-04 12:30:24,383 recommendation_engine Recommendation engine initialized successfully
+INFO 2025-05-04 12:30:24,400 basehttp - Broken pipe from ('127.0.0.1', 52235)
+INFO 2025-05-04 12:31:22,318 basehttp "GET /api/search/?query=spid HTTP/1.1" 200 238
+INFO 2025-05-04 12:31:25,252 basehttp "GET /api/search/?query=spider%20man HTTP/1.1" 200 239
+INFO 2025-05-04 12:31:26,633 basehttp "GET /api/search/?query=spider%20man%201 HTTP/1.1" 200 200
+INFO 2025-05-04 12:31:28,305 basehttp "GET /api/recommend/?title=Spider-Man HTTP/1.1" 200 721
+INFO 2025-05-04 12:31:30,918 basehttp "GET /api/recommend/?title=Spider-Man HTTP/1.1" 200 721
+DEBUG 2025-05-04 12:31:32,529 connectionpool Starting new HTTP connection (1): www.omdbapi.com:80
+DEBUG 2025-05-04 12:31:33,232 connectionpool http://www.omdbapi.com:80 "GET /?t=Spider-Man+3&apikey=7ed79aec HTTP/1.1" 200 None
+INFO 2025-05-04 12:31:33,236 basehttp "GET /api/movie/?title=Spider-Man%203 HTTP/1.1" 200 1005
+INFO 2025-05-04 12:31:40,278 basehttp "GET /api/search/?query=avenger HTTP/1.1" 200 269
+INFO 2025-05-04 12:31:42,979 basehttp "GET /api/recommend/?title=The%20Avengers HTTP/1.1" 200 585
+DEBUG 2025-05-04 12:31:49,784 connectionpool Starting new HTTP connection (1): www.omdbapi.com:80
+DEBUG 2025-05-04 12:31:50,432 connectionpool http://www.omdbapi.com:80 "GET /?t=The+Incredible+Hulk&apikey=7ed79aec HTTP/1.1" 200 None
+INFO 2025-05-04 12:31:50,434 basehttp "GET /api/movie/?title=The%20Incredible%20Hulk HTTP/1.1" 200 978
+INFO 2025-05-04 12:32:24,593 basehttp "GET /api/search/?query=spid HTTP/1.1" 200 238
+INFO 2025-05-04 12:41:54,145 basehttp "GET /api/search/?query=s HTTP/1.1" 200 193
+INFO 2025-05-04 12:41:54,906 basehttp "GET /api/search/?query=sp HTTP/1.1" 200 210
+WARNING 2025-05-04 12:43:28,515 recommendation_engine Movie title 'hi' (normalized: 'hi') not found in indices
+INFO 2025-05-04 12:43:28,517 recommendation_engine Some available titles: ['Avatar', "Pirates of the Caribbean: At World's End", 'Spectre', 'The Dark Knight Rises', 'John Carter', 'Spider-Man 3', 'Tangled', 'Avengers: Age of Ultron', 'Harry Potter and the Half-Blood Prince', 'Batman v Superman: Dawn of Justice', 'Superman Returns', 'Quantum of Solace', "Pirates of the Caribbean: Dead Man's Chest", 'The Lone Ranger', 'Man of Steel', 'The Chronicles of Narnia: Prince Caspian', 'The Avengers', 'Pirates of the Caribbean: On Stranger Tides', 'Men in Black 3', 'The Hobbit: The Battle of the Five Armies']
+WARNING 2025-05-04 12:43:28,668 log Not Found: /api/recommend/
+WARNING 2025-05-04 12:43:28,670 basehttp "GET /api/recommend/?title=hi HTTP/1.1" 404 5649
+INFO 2025-05-04 12:43:29,576 basehttp "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-05-04 12:43:29,629 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2025-05-04 12:43:29,634 basehttp "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-05-04 12:43:29,691 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-05-04 12:43:29,712 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2025-05-04 12:43:29,739 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2025-05-04 12:43:29,802 basehttp "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2025-05-04 12:43:29,806 basehttp "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2025-05-04 12:43:29,814 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2025-05-04 12:43:29,847 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-05-04 12:43:29,853 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-05-04 12:43:29,968 basehttp "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+WARNING 2025-05-04 12:43:30,076 log Not Found: /favicon.ico
+WARNING 2025-05-04 12:43:30,084 basehttp "GET /favicon.ico HTTP/1.1" 404 2707
+INFO 2025-05-04 12:43:30,113 basehttp "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2025-05-04 12:43:30,120 basehttp "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-05-04 12:43:30,139 basehttp "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-05-04 12:43:30,140 basehttp "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2025-05-04 12:43:30,144 basehttp "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2025-05-04 12:43:30,148 basehttp "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-05-04 12:43:30,149 basehttp "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+INFO 2025-05-04 12:45:21,496 basehttp "OPTIONS /api/search/?query=hi HTTP/1.1" 200 0
+INFO 2025-05-04 12:47:24,850 autoreload C:\Users\arsgu\OneDrive\Documents\SYNCED WORK\Github\Movie_recommender\movierecommendation_be\movierecommender\settings.py changed, reloading.
+INFO 2025-05-04 12:47:25,490 autoreload Watching for file changes with StatReloader
